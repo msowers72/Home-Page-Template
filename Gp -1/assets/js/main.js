@@ -210,15 +210,28 @@
 
 // Code for the Pagination feature
 let link = document.getElementsByClassName('page-link');
+let announce = document.querySelector('.announce');
 let currentValue = 1;
 
+
+
 // activeLink function
-function activeLink() {
+function activeLink() { 
+ 
   for (l of link) {
     l.classList.remove('my-active');
+   
   };
-  event.target.classList.add('my-active');
+  event.target.classList.add('my-active');  
   currentValue = event.target.value;
+  announce.classList.add('my-active')
+  
+ 
+
+  if (announce.classList.contains('my-active')) {
+    announce.style.display = "block"
+  } 
+  
 };
 
 function backBtn() {
@@ -240,6 +253,8 @@ function nextBtn() {
     link[currentValue - 1].classList.add('my-active');
   };
 };
+
+
 
 // Slider JavaScript
 let slideIndex = 1;
