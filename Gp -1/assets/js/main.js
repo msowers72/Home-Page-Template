@@ -210,7 +210,8 @@
 
 // Code for the Pagination feature
 let link = document.getElementsByClassName('page-link');
-let announce = document.querySelector('.announce');
+let announce1 = document.querySelector('.announce1');
+let announce2 = document.querySelector('.announce2');
 let currentValue = 1;
 
 
@@ -224,13 +225,11 @@ function activeLink() {
   };
   event.target.classList.add('my-active');  
   currentValue = event.target.value;
-  announce.classList.add('my-active')
-  
+ 
+ console.log(currentValue)
  
 
-  if (announce.classList.contains('my-active')) {
-    announce.style.display = "block"
-  } 
+  
   
 };
 

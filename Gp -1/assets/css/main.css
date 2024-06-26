@@ -1897,7 +1897,13 @@ section,
   text-align: left;
 }
 
+.announce1 {
+  display: none;
+}
 
+.announce-acitve {
+  display: block;
+}
 
 
 /*--------------------------------------------------------------
