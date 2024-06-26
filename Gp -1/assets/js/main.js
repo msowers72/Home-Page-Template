@@ -212,6 +212,8 @@
 let link = document.getElementsByClassName('page-link');
 let announce1 = document.querySelector('.announce1');
 let announce2 = document.querySelector('.announce2');
+let announce3 = document.querySelector('.announce3');
+
 let currentValue = 1;
 
 
@@ -225,11 +227,30 @@ function activeLink() {
   };
   event.target.classList.add('my-active');  
   currentValue = event.target.value;
- 
+ let current_page = currentValue
  console.log(currentValue)
+ console.log(current_page)
  
+  // Logic for pagination
+  if (current_page === 1) {
+    announce1.style.display = "block"
+  } else if (current_page !== 1) {
+    announce1.style.display = "none"
+  } 
 
-  
+   if (current_page === 2) {
+    announce2.style.display = "block"
+  } else if (current_page !== 2) {
+    announce2.style.display = "none"
+  }
+
+  if (current_page === 3) {
+    announce3.style.display = "block"
+  } else if (current_page !== 3) {
+    announce3.style.display = "none"
+  }
+   
+ 
   
 };
 
