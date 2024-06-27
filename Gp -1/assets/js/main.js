@@ -213,6 +213,9 @@ let link = document.getElementsByClassName('page-link');
 let announce1 = document.querySelector('.announce1');
 let announce2 = document.querySelector('.announce2');
 let announce3 = document.querySelector('.announce3');
+let announce4 = document.querySelector('.announce4');
+let announce5 = document.querySelector('.announce5');
+let announce6 = document.querySelector('.announce6');
 
 let currentValue = 1;
 
@@ -249,18 +252,55 @@ function activeLink() {
   } else if (current_page !== 3) {
     announce3.style.display = "none"
   }
+
+  if (current_page === 4) {
+    announce4.style.display = "block"
+  } else if (current_page !== 4) {
+    announce4.style.display = "none"
+  }
+
+  if (current_page === 5) {
+    announce5.style.display = "block"
+  } else if (current_page !== 5) {
+    announce5.style.display = "none"
+  }
+
+  if (current_page === 6) {
+    announce6.style.display = "block"
+  } else if (current_page !== 6) {
+    announce6.style.display = "none"
+  }
    
  
   
 };
 
 function backBtn() {
+  console.log(currentValue)
   if (currentValue > 1) {
     for (l of link) {
       l.classList.remove('my-active');
     };
     currentValue--;
     link[currentValue - 1].classList.add('my-active');
+    
+    if (currentValue === 5) {
+      announce5.style.display = "block";
+      announce6.style.display = "none";
+    } else if (currentValue === 4) {
+      announce4.style.display = "block";
+      announce5.style.display = 'none';
+    } else if (currentValue === 3) {
+      announce3.style.display = "block";
+      announce4.style.display = "none";
+    } else if (currentValue === 2) {
+      announce2.style.display = "block";
+      announce3.style.display = "none";
+    } else if (currentValue === 1) {
+      announce1.style.display = "block";
+      announce2.style.display = "none"
+    }
+
   };
 };
 
@@ -271,6 +311,23 @@ function nextBtn() {
     };
     currentValue++;
     link[currentValue - 1].classList.add('my-active');
+
+    if (currentValue === 2) {
+      announce2.style.display = "block";
+      announce1.style.display = "none";
+    } else if (currentValue === 3) {
+      announce3.style.display = "block";
+      announce2.style.display = "none";
+    } else if (currentValue === 4) {
+      announce4.style.display = "block";
+      announce3.style.display = "none";
+    } else if (currentValue === 5) {
+      announce5.style.display = "block";
+      announce4.style.display = "none";
+    } else if (currentValue === 6) {
+      announce6.style.display = "block";
+      announce5.style.display = "none";
+    }
   };
 };
 
